@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeWars - Artur Pas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+
+    <link rel="stylesheet" href="./Styles/reset.css" />
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <link rel="stylesheet" href="./Styles/solution.css" />
+    <link rel="stylesheet" href="./Styles/challenges.css" />
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <a class="github-link" href="https://github.com/Pasek108"><img src="./Images/github_logo.svg" alt="github logo" />Artur Pas</a> -
+        <a class="codewars-link" href="https://www.codewars.com/users/Artur%20Pas"><img src="./Images/codewars_logo.svg" alt="css battle logo" />Codewars</a>
+        Solutions
+      </div>
+
+      <button class="show-challenges">See all challenges</button>
+    </header>
+
+    <div class="solution-content">
+      <div class="info">
+        <header>
+          <div class="kyu kyu-white">8 kyu</div>
+          <a href="https://www.codewars.com/kata/50654ddff44f800200000004/prolog">Line Safari - Is that a line?</a>
+        </header>
+
+        <div class="info-container">
+          <div class="tab-select">
+            <div class="tab instructions-tab active">Instructions</div>
+            <div class="tab description-tab">Solution description</div>
+          </div>
+
+          <div class="w-full panel bg-ui-section">
+            <div class="markdown prose max-w-5xl mx-auto overflow-x-auto break-words" id="description">
+              <h1 id="kata-task">Kata Task</h1>
+              <p>You are given a <code>grid</code>, which always includes exactly two end-points indicated by <code>X</code></p>
+              <p>You simply need to return true/false if you can detect a <strong>one and only one</strong> "valid" line joining those points.</p>
+              <p>A line can have the following characters :</p>
+              <ul>
+                <li><code>-</code> = left / right</li>
+                <li><code>|</code> = up / down</li>
+                <li><code>+</code> = corner</li>
+              </ul>
+              <h2 id="rules-for-valid-lines">Rules for valid lines</h2>
+              <ul>
+                <li>
+                  The most basic kind of valid line is when the end-points are already adjacent
+                  <pre><code>X
+            X
+            </code></pre>
+                  <pre><code>XX
+            </code></pre>
+                </li>
+                <li>The corner character (<code>+</code>) must be used for all corners (but <strong>only</strong> for corners).</li>
+                <li>If you find yourself at a corner then you <strong>must</strong> turn.</li>
+                <li>It must be possible to follow the line with no ambiguity (lookahead of just <strong>one</strong> step, and never treading on the same spot twice).</li>
+                <li>The line may take any path between the two points.</li>
+                <li>Sometimes a line may be valid in one direction but not the other. Such a line is still considered valid.</li>
+                <li>Every line "character" found in the grid must be part of the line. If extras are found then the line is not valid.</li>
+              </ul>
+              <h1 id="examples">Examples</h1>
+              <h2 id="good-lines">Good lines</h2>
+              <table border="2">
+                <tbody>
+                  <tr>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">
+X---------X
+            </pre
+                      >
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">
+X
+            |
+            |
+            X
+            </pre
+                      >
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">
+   +--------+
+            X--+        +--+
+                           |
+                           X
+            </pre
+                      >
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">
+   +-------------+
+               |             |
+            X--+      X------+    
+            </pre
+                      >
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">   +-------+
+               |      +<span style="background:green">+</span>+---+
+            X--+      +-+   X
+            </pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h2 id="bad-lines">Bad lines</h2>
+              <table border="2">
+                <tbody>
+                  <tr>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">X-----<span style="background:red">|</span>----X
+            </pre>
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">X
+            |
+            <span style="background:red">+</span>
+            X
+            </pre>
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">   <span style="background:red">|</span>--------+
+            X---        <span style="background:red">-</span>--+
+                           |
+                           X
+            </pre>
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">   +------<span style="background:red"> </span>
+               |      <span style="background:red"> </span>       
+            X--+      X  
+            </pre>
+                    </td>
+                    <td width="20%">
+                      <pre style="font-size: 20px; line-height: 22px">      +------+
+                  |      |
+            X-----<span style="background:red">+</span>------+
+                  |
+                  X
+            </pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h1 id="hint">Hint</h1>
+              <p>Imagine yourself walking a path where you can only see your very next step. Can you know which step you must take, or not?</p>
+            </div>
+            <div class="pt-4 max-w-5xl mx-auto">
+              <div class="mt-4">
+                <span><i class="icon-moon-tag"></i></span>
+                <div class="keyword-tag">Algorithms</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution">
+        <header>
+          Solution
+
+          <div class="langauge-select">
+            <div class="current-language">
+              <img class="js-logo" src="/Images/nodejs_logo.svg" alt="js logo" />
+              <span class="name">JavaScript</span>
+            </div>
+
+            <div class="languages-list" hidden>
+              <div class="language active">
+                <img class="js-logo" src="/Images/nodejs_logo.svg" alt="js logo" />
+                <span class="name">JavaScript</span>
+              </div>
+              <div class="language">
+                <img class="typescript-logo" src="/Images/typescript_logo.svg" alt="typescript logo" />
+                <span class="name">TypeScript</span>
+              </div>
+              <div class="language">
+                <img class="python-logo" src="/Images/python_logo.svg" alt="python logo" />
+                <span class="name">Python</span>
+              </div>
+              <div class="language">
+                <img class="java-logo" src="/Images/java_logo.svg" alt="java logo" />
+                <span class="name">Java</span>
+              </div>
+              <div class="language">
+                <img class="php-logo" src="/Images/php_logo.svg" alt="php logo" />
+                <span class="name">PHP</span>
+              </div>
+              <div class="language disabled">
+                <img class="sql-logo" src="/Images/sql_logo.svg" alt="sql logo" />
+                <span class="name">SQL</span>
+              </div>
+              <div class="language">
+                <img class="ruby-logo" src="/Images/ruby_logo.svg" alt="ruby logo" />
+                <span class="name">Ruby</span>
+              </div>
+              <div class="language">
+                <img class="rust-logo" src="/Images/rust_logo.svg" alt="rust logo" />
+                <span class="name">Rust</span>
+              </div>
+              <div class="language">
+                <img class="cplusplus-logo" src="/Images/cplusplus_logo.svg" alt="cplusplus logo" />
+                <span class="name">C++</span>
+              </div>
+              <div class="language">
+                <img class="csharp-logo" src="/Images/csharp_logo.svg" alt="csharp logo" />
+                <span class="name">C#</span>
+              </div>
+              <div class="language">
+                <img class="c-logo" src="/Images/c_logo.svg" alt="c logo" />
+                <span class="name">C</span>
+              </div>
+              <div class="language">
+                <img class="nasm-logo" src="/Images/nasm_logo.svg" alt="nasm logo" />
+                <span class="name">NASM</span>
+              </div>
+              <div class="language">
+                <img class="kotlin-logo" src="/Images/kotlin_logo.svg" alt="kotlin logo" />
+                <span class="name">Kotlin</span>
+              </div>
+              <div class="language">
+                <img class="haskell-logo" src="/Images/haskell_logo.svg" alt="haskell logo" />
+                <span class="name">Haskell</span>
+              </div>
+              <div class="language">
+                <img class="prolog-logo" src="/Images/prolog_logo.svg" alt="prolog logo" />
+                <span class="name">Prolog</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="code">
+          <pre>
+            <code class="language-hs">
+module LettersBestFriend (bestFriend) where
+
+bestFriend :: String -> Char -> Char -> Bool
+bestFriend [] a b = True
+bestFriend [x] a b = x /= a
+bestFriend (x:x':xs) a b 
+  | x == a && x' /= b = False
+  | otherwise = bestFriend (x':xs) a b
+
+  module LettersBestFriend (bestFriend) where
+
+bestFriend :: String -> Char -> Char -> Bool
+bestFriend [] a b = True
+bestFriend [x] a b = x /= a
+bestFriend (x:x':xs) a b 
+  | x == a && x' /= b = False
+  | otherwise = bestFriend (x':xs) a b
+
+  module LettersBestFriend (bestFriend) where
+
+bestFriend :: String -> Char -> Char -> Bool
+bestFriend [] a b = True
+bestFriend [x] a b = x /= a
+bestFriend (x:x':xs) a b 
+  | x == a && x' /= b = False
+  | otherwise = bestFriend (x':xs) a b
+
+  module LettersBestFriend (bestFriend) where
+
+bestFriend :: String -> Char -> Char -> Bool
+bestFriend [] a b = True
+bestFriend [x] a b = x /= a
+bestFriend (x:x':xs) a b 
+  | x == a && x' /= b = False
+  | otherwise = bestFriend (x':xs) a b
+
+  module LettersBestFriend (bestFriend) where  module LettersBestFriend (bestFriend) where  module LettersBestFriend (bestFriend) where  module LettersBestFriend (bestFriend) where  module LettersBestFriend (bestFriend) where  module LettersBestFriend (bestFriend) where
+
+bestFriend :: String -> Char -> Char -> Bool
+bestFriend [] a b = True
+bestFriend [x] a b = x /= a
+bestFriend (x:x':xs) a b 
+  | x == a && x' /= b = False
+  | otherwise = bestFriend (x':xs) a b
+  module LettersBestFriend (bestFriend) where
+
+bestFriend :: String -> Char -> Char -> Bool
+bestFriend [] a b = True
+bestFriend [x] a b = x /= a
+bestFriend (x:x':xs) a b 
+  | x == a && x' /= b = False
+  | otherwise = bestFriend (x':xs) a b
+
+  module LettersBestFriend (bestFriend) where
+
+bestFriend :: String -> Char -> Char -> Bool
+bestFriend [] a b = True
+bestFriend [x] a b = x /= a
+bestFriend (x:x':xs) a b 
+  | x == a && x' /= b = False
+  | otherwise = bestFriend (x':xs) a b
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="challenges-select" hidden>
+      <div class="languages-list">
+        <nav>
+          <ul>
+            <li class="active">
+              <img class="js-logo" src="/Images/nodejs_logo.svg" alt="js logo" />
+              <span class="name">JavaScript (<span class="count">32</span>)</span>
+              <div class="kyu kyu-blue">3 kyu</div>
+            </li>
+            <li>
+              <img class="typescript-logo" src="/Images/typescript_logo.svg" alt="typescript logo" />
+              <span class="name">TypeScript (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">7 kyu</div>
+            </li>
+            <li>
+              <img class="python-logo" src="/Images/python_logo.svg" alt="python logo" />
+              <span class="name">Python (<span class="count">0</span>)</span>
+              <div class="kyu kyu-yellow">6 kyu</div>
+            </li>
+            <li>
+              <img class="java-logo" src="/Images/java_logo.svg" alt="java logo" />
+              <span class="name">Java (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">7 kyu</div>
+            </li>
+            <li>
+              <img class="php-logo" src="/Images/php_logo.svg" alt="php logo" />
+              <span class="name">PHP (<span class="count">0</span>)</span>
+              <div class="kyu kyu-yellow">5 kyu</div>
+            </li>
+            <li>
+              <img class="sql-logo" src="/Images/sql_logo.svg" alt="sql logo" />
+              <span class="name">SQL (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="ruby-logo" src="/Images/ruby_logo.svg" alt="ruby logo" />
+              <span class="name">Ruby (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="rust-logo" src="/Images/rust_logo.svg" alt="rust logo" />
+              <span class="name">Rust (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="cplusplus-logo" src="/Images/cplusplus_logo.svg" alt="cplusplus logo" />
+              <span class="name">C++ (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="csharp-logo" src="/Images/csharp_logo.svg" alt="csharp logo" />
+              <span class="name">C# (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="c-logo" src="/Images/c_logo.svg" alt="c logo" />
+              <span class="name">C (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="nasm-logo" src="/Images/nasm_logo.svg" alt="nasm logo" />
+              <span class="name">NASM (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="kotlin-logo" src="/Images/kotlin_logo.svg" alt="kotlin logo" />
+              <span class="name">Kotlin (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li>
+              <img class="haskell-logo" src="/Images/haskell_logo.svg" alt="haskell logo" />
+              <span class="name">Haskell (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+            <li class="" style="margin: 0">
+              <img class="prolog-logo" src="/Images/prolog_logo.svg" alt="prolog logo" />
+              <span class="name">Prolog (<span class="count">0</span>)</span>
+              <div class="kyu kyu-white">8 kyu</div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="challenges">
+        <header>
+          <div class="active-language">
+            <span class="name">JavaScript (<span class="count">32</span>)</span>
+          </div>
+
+          <div class="difficulties">
+            <div class="indicator"></div>
+            <div class="difficulty active" data-id="0">
+              <div class="kyu kyu-purple">1 kyu</div>
+            </div>
+            <div class="difficulty" data-id="1">
+              <div class="kyu kyu-purple">2 kyu</div>
+            </div>
+            <div class="difficulty" data-id="2">
+              <div class="kyu kyu-blue">3 kyu</div>
+            </div>
+            <div class="difficulty" data-id="3">
+              <div class="kyu kyu-blue">4 kyu</div>
+            </div>
+            <div class="difficulty" data-id="4">
+              <div class="kyu kyu-yellow">5 kyu</div>
+            </div>
+            <div class="difficulty" data-id="5">
+              <div class="kyu kyu-yellow">6 kyu</div>
+            </div>
+            <div class="difficulty" data-id="6">
+              <div class="kyu kyu-white">7 kyu</div>
+            </div>
+            <div class="difficulty" data-id="7">
+              <div class="kyu kyu-white">8 kyu</div>
+            </div>
+          </div>
+          <hr />
+        </header>
+
+        <div class="list">
+          <div class="challenge">A Letter's Best Friend</div>
+          <div class="challenge">Least Larger</div>
+          <div class="challenge">Shortest Word</div>
+          <div class="challenge">Complementary DNA</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/haskell.min.js" integrity="sha512-BLdZOnIuKk+IzhLlZ717U+NlMPDI0kb/F6CcaYZHT9j73TLHEHKIVFeG5jl5EBGylm5cGaELO6N64cIZjk8H2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/plaintext.min.js" integrity="sha512-hCeHj8G/Y/7xwrvkHQ01YXcWA1byu2jmsruZ+Q8DKyLlVMf1QuZqOgdoxpZa/CFLantVvOoXIEZn6yX2hzFstg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      hljs.highlightAll()
+    </script>
+    <script src="Scripts/script.js"></script>
+  </body>
+</html>

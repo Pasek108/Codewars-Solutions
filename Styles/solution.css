@@ -1,0 +1,214 @@
+body > .solution-content {
+  display: flex;
+  gap: 2rem;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  padding: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+/* -------------------------- info -------------------------- */
+.info {
+  position: relative;
+  flex-grow: 1;
+  max-width: 49%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: #222327;
+  overflow: hidden;
+}
+
+.info header {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #222327;
+}
+
+.info header a {
+  color: #eee;
+}
+
+.info header .kyu {
+  position: relative;
+  right: unset;
+  margin-right: 0.5rem;
+}
+
+.info .info-container {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 2.5rem);
+  margin-top: 2.5rem;
+  padding: 1rem;
+  overflow: scroll;
+}
+
+/* ------------- tab select ------------- */
+.info .tab-select {
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.info .tab-select .tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 0.5rem 1rem;
+  background-color: #16171b;
+  cursor: pointer;
+}
+
+.info .tab-select .tab.active {
+  background-color: #bb432c;
+}
+
+/* -------------------------- solution -------------------------- */
+.solution {
+  position: relative;
+  flex-grow: 1;
+  max-width: 50%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: #131414;
+  overflow: hidden;
+}
+
+.solution header {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #222327;
+}
+
+.solution .code {
+  width: 100%;
+  height: calc(100% - 2.5rem);
+  margin-top: 2.5rem;
+  overflow: scroll;
+}
+
+.solution pre {
+  width: fit-content;
+  margin: 0;
+  white-space: pre;
+  overflow: hidden;
+}
+
+.solution code {
+  width: fit-content;
+  margin-top: -1rem;
+  margin-bottom: -2rem;
+  padding: 0 1rem !important;
+}
+
+/* ------------- solution language select ------------- */
+.langauge-select {
+  position: relative;
+  height: 2rem;
+  width: 9rem;
+  margin-left: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.current-language {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 2rem;
+  width: 9rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  background-color: #16171b;
+  background-image: url("/Images/dropdown.svg");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 55%, 0 0;
+  background-size: 0.65em auto, 100%;
+}
+
+.langauge-select .current-language img {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  margin-right: 0.25rem;
+  filter: brightness(0) invert(1);
+}
+
+.langauge-select .current-language:hover {
+  background-color: #373940;
+}
+
+.solution .languages-list {
+  position: absolute;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 9rem;
+  height: 50vh;
+  border-radius: 0.5rem;
+  background-color: #222327;
+  overflow: scroll;
+}
+
+.solution .languages-list::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.solution .languages-list .language {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 2rem;
+  width: 9rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  background-color: #222327;
+  cursor: pointer;
+}
+
+.solution .languages-list .language.disabled {
+  color: #404040;
+}
+
+.solution .languages-list .language.disabled img {
+  filter: brightness(0) invert(0.25);
+}
+
+.solution .languages-list .language.active {
+  background-color: #bb432c;
+}
+
+.solution .languages-list .language:not(.active):not(.disabled):hover {
+  background-color: #16171b;
+}
+
+.solution .language img {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  margin-right: 0.5rem;
+  filter: brightness(0) invert(1);
+}

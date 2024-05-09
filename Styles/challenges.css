@@ -1,0 +1,234 @@
+body > .challenges-select {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  padding: 1.5rem;
+  padding-top: 0.5rem;
+  overflow: hidden;
+}
+
+/* -------------------------- languages list -------------------------- */
+.languages-list {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  z-index: 100;
+  height: calc(100vh - 6rem);
+  width: fit-content;
+  min-width: 5rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  user-select: none;
+}
+
+.languages-list::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: fit-content;
+  width: fit-content;
+  min-width: 5rem;
+  padding: 0;
+  margin-right: 2.5rem;
+}
+
+nav ul {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.1s;
+  cursor: pointer;
+}
+
+nav li:before {
+  box-shadow: 2rem 0.5rem #16171b, 2rem -0.5rem #16171b;
+}
+
+nav li:before,
+nav li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  width: calc(100% + 1rem);
+  height: 100%;
+  background-color: #373940;
+  display: none;
+}
+
+nav li:after {
+  top: 0.45rem;
+  left: calc(100% - 1rem);
+  width: 2.11rem;
+  height: 2.11rem;
+  rotate: 45deg;
+}
+
+nav li:not(.active):hover:before,
+nav li:not(.active):hover:after {
+  background-color: #222327;
+  display: block;
+}
+
+nav li.active {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+}
+
+nav li.active:before,
+nav li.active:after {
+  display: block;
+}
+
+nav li img {
+  position: absolute;
+  left: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+nav li .name {
+  position: relative;
+  width: 12rem;
+  margin: 0.125rem 0 0 4.75rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* -------------------------- challenges list -------------------------- */
+.challenges {
+  width: calc(100vw - 20rem);
+  margin-left: 20rem;
+}
+
+.challenges header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  user-select: none;
+}
+
+.challenges header .difficulties {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenges header .indicator {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 4.25rem;
+  height: 3rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #373940;
+  transition: translate 0.25s;
+}
+
+.challenges header .indicator:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.2rem;
+  background-color: #bb432c;
+}
+
+.challenges header .difficulty {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.25rem;
+  height: 3rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.challenges header .difficulty:hover {
+  background-color: #222327;
+}
+
+.challenges header .difficulty .kyu {
+  right: auto;
+}
+
+.challenges header .active-language {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.challenges header .active-language .kyu {
+  margin-bottom: -0.125rem;
+}
+
+.challenges header hr {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 0.2rem;
+  margin: 0;
+  border-radius: 10rem;
+  background-color: #efefef;
+}
+
+.challenges .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+  grid-template-rows: repeat(auto-fill, 3.25rem);
+  gap: 1rem;
+  height: calc(100% - 4rem);
+  margin-top: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.challenges .list .challenge {
+  flex-grow: 1;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #222327;
+  cursor: pointer;
+}
+
+.challenges .list .challenge:hover {
+  background-color: #373940;
+}
