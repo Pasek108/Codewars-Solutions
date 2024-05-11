@@ -15,32 +15,6 @@ show_challenges_button.addEventListener("click", () => {
   }
 })
 
-/* ------------------------- info tabs ------------------------- */
-const instructions_tab = document.querySelector(".instructions-tab")
-const description_tab = document.querySelector(".description-tab")
-
-instructions_tab.addEventListener("click", () => {
-  description_tab.classList.remove("active")
-  instructions_tab.classList.add("active")
-})
-
-description_tab.addEventListener("click", () => {
-  instructions_tab.classList.remove("active")
-  description_tab.classList.add("active")
-})
-
-/* ------------------------- solution langauge ------------------------- */
-const current_language = document.querySelector(".current-language")
-const languages_list = document.querySelector(".languages-list")
-
-current_language.addEventListener("click", () => {
-  if (languages_list.hasAttribute("hidden")) {
-    languages_list.removeAttribute("hidden")
-  } else {
-    languages_list.setAttribute("hidden", true)
-  }
-})
-
 /* ------------------------- choosing project ------------------------- */
 const projects = document.querySelectorAll("li")
 projects.forEach((project) => project.addEventListener("click", loadProject))
@@ -58,3 +32,14 @@ difficulties.forEach((difficulty) => difficulty.addEventListener("click", loadDi
 function loadDifficulty(evt) {
   indicator.style.translate = `${+evt.currentTarget.dataset.id * 4.25}rem`
 }
+
+/* ------------------------- load html ------------------------- */
+function loadHTML(html_path, container) {
+  fetch(html_path)
+    .then((response) => response.text())
+    .then((text) => (container.innerHTML = text))
+}
+
+loadHTML("Challenges/8kyu/multiply/nasm/description.html", document.querySelector(".description"))
+
+new SolutionPreview()

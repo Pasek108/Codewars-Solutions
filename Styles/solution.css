@@ -166,7 +166,8 @@ body > .solution-content {
   display: flex;
   flex-direction: column;
   width: 9rem;
-  height: 50vh;
+  height: fit-content;
+  max-height: 50vh;
   border-radius: 0.5rem;
   background-color: #222327;
   overflow: scroll;
