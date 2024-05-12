@@ -1,45 +1,13 @@
 "use strict"
 
-/* ------------------------- open challeneges ------------------------- */
-const solution_content = document.querySelector(".solution-content")
-const challenges_select = document.querySelector(".challenges-select")
+const challenges_data = new ChallengesData()
+const solution_preview = new SolutionPreview()
+const challenges_preview = new ChallengesList()
 
-const show_challenges_button = document.querySelector(".show-challenges")
-show_challenges_button.addEventListener("click", () => {
-  if (solution_content.hasAttribute("hidden")) {
-    solution_content.removeAttribute("hidden")
-    challenges_select.setAttribute("hidden", true)
-  } else {
-    solution_content.setAttribute("hidden", true)
-    challenges_select.removeAttribute("hidden")
-  }
-})
+hljs.highlightAll()
 
-/* ------------------------- choosing project ------------------------- */
-const projects = document.querySelectorAll("li")
-projects.forEach((project) => project.addEventListener("click", loadProject))
-
-function loadProject(evt) {
-  projects.forEach((project) => project.classList.remove("active"))
-  evt.currentTarget.classList.add("active")
-}
-
-/* ------------------------- choosing catregory ------------------------- */
-const indicator = document.querySelector(".difficulties .indicator")
-const difficulties = document.querySelectorAll(".difficulty")
-difficulties.forEach((difficulty) => difficulty.addEventListener("click", loadDifficulty))
-
-function loadDifficulty(evt) {
-  indicator.style.translate = `${+evt.currentTarget.dataset.id * 4.25}rem`
-}
-
-/* ------------------------- load html ------------------------- */
 function loadHTML(html_path, container) {
   fetch(html_path)
     .then((response) => response.text())
     .then((text) => (container.innerHTML = text))
 }
-
-loadHTML("Challenges/8kyu/multiply/nasm/description.html", document.querySelector(".description"))
-
-new SolutionPreview()

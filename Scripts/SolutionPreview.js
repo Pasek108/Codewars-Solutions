@@ -19,8 +19,14 @@ class SolutionPreview {
     this.description_tab.addEventListener("click", () => this.switchTab("description"))
 
     // language
-    this.language_select = new SolutionLanguageSelect()
-    this.language_select.createLanguagesList(["JavaScript", "Python", "Haskell"])
+    this.language_select = new SolutionLanguageSelect(["JavaScript", "Python", "Haskell", "C#", "C++"], this.loadSolutionLanguage.bind(this))
+
+    // code
+    this.code_container = this.container.querySelector(".code")
+    this.code = this.code_container.querySelector("code")
+
+    loadHTML("Challenges/8kyu/multiply/instructions.html", this.instructions_container)
+    this.loadSolutionLanguage("x86asm")
   }
 
   loadSolution(solution_data) {
@@ -30,7 +36,29 @@ class SolutionPreview {
     this.language_select.createLanguagesList(solution_data.languages)
 
     loadHTML(solution_data.instructions_link, this.instructions_container)
-    loadHTML(solution_data.description_link, this.description_container)
+
+    this.loadSolutionLanguage("x86asm")
+
+    this.switchTab("instructions")
+  }
+
+  loadSolutionLanguage(language) {
+    const solution_description_link = "Challenges/8kyu/multiply/nasm/description.html"
+    const solution_code_link = "Challenges/8kyu/multiply/nasm/solution.asm"
+
+    loadHTML(solution_description_link, this.description_container)
+    this.loadCode(solution_code_link, language)
+  }
+
+  loadCode(file_path, language) {
+    fetch(file_path)
+      .then((response) => response.text())
+      .then((text) => {
+        this.code.className = `language-${language}`
+        this.code.innerHTML += text
+        this.code.removeAttribute("data-highlighted")
+        hljs.highlightAll()
+      })
   }
 
   switchTab(tab) {
