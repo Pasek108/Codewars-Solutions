@@ -19,45 +19,38 @@ class SolutionPreview {
     this.description_tab.addEventListener("click", () => this.switchTab("description"))
 
     // language
-    this.language_select = new SolutionLanguageSelect(["JavaScript", "Python", "Haskell", "C#", "C++"], this.loadSolutionLanguage.bind(this))
+    this.language_select = new SolutionLanguageSelect(this.loadSolutionLanguage.bind(this))
 
     // code
     this.code_container = this.container.querySelector(".code")
     this.code = this.code_container.querySelector("code")
-
-    loadHTML("Challenges/8kyu/multiply/instructions.html", this.instructions_container)
-    this.loadSolutionLanguage("x86asm")
   }
 
   loadSolution(solution_data) {
     this.setKyu(solution_data.kyu)
     this.setTitle(solution_data.link, solution_data.name)
 
-    this.language_select.createLanguagesList(solution_data.languages)
+    loadHTML(solution_data.links.instructions, this.instructions_container)
 
-    loadHTML(solution_data.instructions_link, this.instructions_container)
-
-    this.loadSolutionLanguage("x86asm")
+    this.language_select.createLanguagesList(solution_data)
+    this.loadSolutionLanguage(solution_data, 0)
 
     this.switchTab("instructions")
   }
 
-  loadSolutionLanguage(language) {
-    const solution_description_link = "Challenges/8kyu/multiply/nasm/description.html"
-    const solution_code_link = "Challenges/8kyu/multiply/nasm/solution.asm"
-
-    loadHTML(solution_description_link, this.description_container)
-    this.loadCode(solution_code_link, language)
+  loadSolutionLanguage(solution_data, lang_id) {
+    loadHTML(solution_data.links.descriptions[lang_id], this.description_container)
+    this.loadCode(solution_data.links.codes[lang_id], solution_data.languages[lang_id])
   }
 
-  loadCode(file_path, language) {
+  loadCode(file_path, language_data) {
     fetch(file_path)
       .then((response) => response.text())
       .then((text) => {
-        this.code.className = `language-${language}`
-        this.code.innerHTML += text
+        this.code.className = `language-${language_data.hilighter_name}`
+        this.code.innerHTML = text
         this.code.removeAttribute("data-highlighted")
-        hljs.highlightAll()
+        hljs.highlightElement(this.code)
       })
   }
 

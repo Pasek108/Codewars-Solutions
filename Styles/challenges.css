@@ -21,7 +21,6 @@ body > .challenges-select {
   overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
-  user-select: none;
 }
 
 .languages-list::-webkit-scrollbar {
@@ -130,7 +129,6 @@ nav li .name {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  user-select: none;
 }
 
 .challenges header .difficulties {
@@ -209,15 +207,18 @@ nav li .name {
   background-color: #efefef;
 }
 
+.challenges .challenges-list-container {
+  height: calc(100% - 4rem);
+  margin-top: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .challenges .list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   grid-template-rows: repeat(auto-fill, 3.25rem);
   gap: 1rem;
-  height: calc(100% - 4rem);
-  margin-top: 1rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .challenges .list .challenge {
@@ -231,4 +232,12 @@ nav li .name {
 
 .challenges .list .challenge:hover {
   background-color: #373940;
+}
+
+.challenges .no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 2;
+  grid-row: span 2;
 }

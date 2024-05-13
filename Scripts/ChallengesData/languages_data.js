@@ -1,12 +1,12 @@
 "use strict"
 
-const langauges_data = [
+const languages_data = [
   {
     full_name: "JavaScript",
     folder_name: "javascript",
     hilighter_name: "javascript",
     file_extension: "js",
-    problems_solved: 0,
+    problems_solved: 1,
     kyu: 3,
   },
   {

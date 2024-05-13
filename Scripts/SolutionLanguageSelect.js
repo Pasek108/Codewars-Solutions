@@ -1,21 +1,20 @@
 "use strict"
 
 class SolutionLanguageSelect {
-  constructor(languages_list, loadSolutionLanguage) {
-    this.languages_list = languages_list
+  constructor(loadSolutionLanguage) {
     this.loadSolutionLanguage = loadSolutionLanguage
 
-    this.current_language = languages_list[0]
+    this.current_solution = null
+    this.current_language = null
     this.is_hidden = true
 
-    this.container = document.querySelector(".langauge-select")
+    this.container = document.querySelector(".language-select")
     document.addEventListener("click", this.hideOnClickOutdise.bind(this))
 
     this.current_language_container = this.container.querySelector(".current-language")
     this.current_language_container.addEventListener("click", this.toggleLanguagesList.bind(this))
 
     this.languages_list_container = this.container.querySelector(".languages-list")
-    this.createLanguagesList(languages_list)
   }
 
   showLanguagesList() {
@@ -38,57 +37,66 @@ class SolutionLanguageSelect {
     if (!this.container.contains(evt.target)) this.hideLanguagesList()
   }
 
-  changeLanguage(language) {
-    this.loadSolutionLanguage(language)
+  changeLanguage(lang_id) {
+    this.current_language = this.current_solution.languages[lang_id]
 
-    const current_language = this.createLanguageOption(language)
+    this.loadSolutionLanguage(this.current_solution, lang_id)
+
+    const current_language = this.createLanguageOption(this.current_language)
     this.current_language_container.innerHTML = current_language.innerHTML
 
     this.hideLanguagesList()
   }
 
-  createLanguagesList(languages_list) {
-    // current language
-    const current_language = this.createLanguageOption(languages_list[0])
+  createLanguagesList(solution_data) {
+    this.current_solution = solution_data
+    this.current_language = solution_data.languages[0]
+
+    const current_language = this.createLanguageOption(this.current_language)
     this.current_language_container.innerHTML = current_language.innerHTML
 
-    // languages options
     this.languages_list_container.innerHTML = ""
 
-    for (let i = 0; i < languages_list.length; i++) {
-      const langauge_option = this.createLanguageOption(languages_list[i])
-      if (i === 0) langauge_option.className = "language active"
+    for (let i = 0; i < solution_data.languages.length; i++) {
+      const language_option = this.createLanguageOption(solution_data.languages[i])
+      if (i === 0) language_option.className = "language active"
 
-      langauge_option.addEventListener("click", (evt) => {
-        this.languages_list_container.querySelector(".active").classList.remove("active")
-        evt.currentTarget.classList.add("active")
-        this.changeLanguage(languages_list[i])
-      })
+      language_option.addEventListener("click", (evt) => this.selectLanguage(evt, i))
 
-      this.languages_list_container.appendChild(langauge_option)
+      this.languages_list_container.appendChild(language_option)
     }
   }
 
-  createLanguageOption(language_name) {
-    let lowercase_name = language_name.toLowerCase()
-    lowercase_name = lowercase_name.replaceAll("+", "plus")
-    lowercase_name = lowercase_name.replaceAll("#", "sharp")
+  selectLanguage(evt, lang_id) {
+    if (this.current_language === this.current_solution.languages[lang_id]) {
+      this.hideLanguagesList()
+      return
+    }
 
-    const language = document.createElement("div")
-    language.className = "language"
+    const active_language_option = this.languages_list_container.querySelector(".active")
+    active_language_option.classList.remove("active")
+
+    evt.currentTarget.classList.add("active")
+
+    this.changeLanguage(lang_id)
+  }
+
+  createLanguageOption(language) {
+    const language_option = document.createElement("div")
+    language_option.className = "language"
 
     const logo = document.createElement("img")
-    logo.className = `${lowercase_name}-logo`
-    logo.src = `/Images/${lowercase_name}_logo.svg`
-    logo.alt = `${lowercase_name} logo`
+    logo.className = `${language.folder_name}-logo`
+    logo.src = `/Images/${language.folder_name}_logo.svg`
+    logo.alt = `${language.folder_name} logo`
 
     const name = document.createElement("span")
     name.className = "name"
-    name.textContent = language_name
+    name.textContent = language.full_name
 
-    language.appendChild(logo)
-    language.appendChild(name)
+    language_option.appendChild(logo)
+    language_option.appendChild(name)
 
-    return language
+    return language_option
   }
 }

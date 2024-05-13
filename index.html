@@ -49,7 +49,7 @@
         <header>
           Solution
 
-          <div class="langauge-select">
+          <div class="language-select">
             <div class="current-language">
               <img class="js-logo" src="/Images/javascript_logo.svg" alt="js logo" />
               <span class="name">JavaScript</span>
@@ -134,7 +134,7 @@
           <ul>
             <li class="active">
               <img class="js-logo" src="/Images/javascript_logo.svg" alt="js logo" />
-              <span class="name">JavaScript (<span class="count">32</span>)</span>
+              <span class="name">JavaScript (<span class="count">0</span>)</span>
               <div class="kyu kyu-blue">3 kyu</div>
             </li>
             <li>
@@ -202,7 +202,7 @@
               <span class="name">Haskell (<span class="count">0</span>)</span>
               <div class="kyu kyu-white">8 kyu</div>
             </li>
-            <li class="" style="margin: 0">
+            <li style="margin: 0">
               <img class="prolog-logo" src="/Images/prolog_logo.svg" alt="prolog logo" />
               <span class="name">Prolog (<span class="count">0</span>)</span>
               <div class="kyu kyu-white">8 kyu</div>
@@ -214,44 +214,64 @@
       <div class="challenges">
         <header>
           <div class="active-language">
-            <span class="name">JavaScript (<span class="count">32</span>)</span>
+            <span class="name"><span class="language-name">JavaScript</span> (<span class="count">1</span>)</span>
           </div>
 
           <div class="difficulties">
             <div class="indicator"></div>
-            <div class="difficulty active" data-id="0">
+            <div class="difficulty active">
               <div class="kyu kyu-purple">1 kyu</div>
             </div>
-            <div class="difficulty" data-id="1">
+            <div class="difficulty">
               <div class="kyu kyu-purple">2 kyu</div>
             </div>
-            <div class="difficulty" data-id="2">
+            <div class="difficulty">
               <div class="kyu kyu-blue">3 kyu</div>
             </div>
-            <div class="difficulty" data-id="3">
+            <div class="difficulty">
               <div class="kyu kyu-blue">4 kyu</div>
             </div>
-            <div class="difficulty" data-id="4">
+            <div class="difficulty">
               <div class="kyu kyu-yellow">5 kyu</div>
             </div>
-            <div class="difficulty" data-id="5">
+            <div class="difficulty">
               <div class="kyu kyu-yellow">6 kyu</div>
             </div>
-            <div class="difficulty" data-id="6">
+            <div class="difficulty">
               <div class="kyu kyu-white">7 kyu</div>
             </div>
-            <div class="difficulty" data-id="7">
+            <div class="difficulty">
               <div class="kyu kyu-white">8 kyu</div>
             </div>
           </div>
           <hr />
         </header>
 
-        <div class="list">
-          <div class="challenge">A Letter's Best Friend</div>
-          <div class="challenge">Least Larger</div>
-          <div class="challenge">Shortest Word</div>
-          <div class="challenge">Complementary DNA</div>
+        <div class="challenges-list-container">
+          <div class="list list-1kyu">
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
+          <div class="list list-2kyu" hidden>
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
+          <div class="list list-3kyu" hidden>
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
+          <div class="list list-4kyu" hidden>
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
+          <div class="list list-5kyu" hidden>
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
+          <div class="list list-6kyu" hidden>
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
+          <div class="list list-7kyu" hidden>
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
+          <div class="list list-8kyu" hidden>
+            <div class="no-data" hidden>I did not solve any challanges at this level with this langauge</div>
+          </div>
         </div>
       </div>
     </div>
@@ -259,36 +279,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js" integrity="sha512-H69VMoQ814lKjFuFwLImb4OwoK8Rm8fcvsqZexaxjp/VkJfEnrt5TO7oaOdNlMf/j51QUctfLTe8+rgozW7l2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="Scripts/ChallengesData.js"></script>
-    <script src="Scripts/ChallengesList.js"></script>
     <script src="Scripts/SolutionLanguageSelect.js"></script>
     <script src="Scripts/SolutionPreview.js"></script>
-
     <script src="Scripts/script.js"></script>
 
-    <script async src="Scripts/ChallengesData/languages_data.js"></script>
-    <script async src="Scripts/ChallengesData/1kyu_data.js"></script>
-    <script async src="Scripts/ChallengesData/2kyu_data.js"></script>
-    <script async src="Scripts/ChallengesData/3kyu_data.js"></script>
-    <script async src="Scripts/ChallengesData/4kyu_data.js"></script>
-    <script async src="Scripts/ChallengesData/5kyu_data.js"></script>
-    <script async src="Scripts/ChallengesData/6kyu_data.js"></script>
-    <script async src="Scripts/ChallengesData/7kyu_data.js"></script>
-    <script async src="Scripts/ChallengesData/8kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/languages_data.js"></script>
+    <script src="Scripts/ChallengesData/1kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/2kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/3kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/4kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/5kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/6kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/7kyu_data.js"></script>
+    <script src="Scripts/ChallengesData/8kyu_data.js"></script>
 
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/haskell.min.js" integrity="sha512-BLdZOnIuKk+IzhLlZ717U+NlMPDI0kb/F6CcaYZHT9j73TLHEHKIVFeG5jl5EBGylm5cGaELO6N64cIZjk8H2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/x86asm.min.js" integrity="sha512-PsyL9V1oGfx9uQV60+pJM/GpWAefAPX7sdnE2rQ/jILKHxZCk2TPHMHLOSoihzaatNHpBzksS0EpMqnBXC7XGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js" integrity="sha512-9Ge7wPRBM6DUCnE7Citv0pBWqt7hXeX2732053zamwp+11RX6HBQ7DdXRMNZM6VQmnwKXFKBLE7jS0dgWXUPnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js" integrity="sha512-XtCbcs/SrnccRnVorQSvPCj3Xon5JzzolJpB8yxlUAlzxqaFxkLzvVbVvjAs0FVigBM3MNu611uQ8eyINq4w7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js" integrity="sha512-2Mz4HPfbnPT0gLJwtbyMgAXzvsHt73xiIIkyFsrC0pc4XEf/UMQon8eXhdPQIideGBUla7eE1inLnzm9L/ZTFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js" integrity="sha512-sQgzBflUTahXrlGeMqS6Z+ugjLta005qmvARRaCSEJ8aflXe03DNo8VzxCDHGzqAUqe1+iRnLfCP5ivekMZnGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/kotlin.min.js" integrity="sha512-4vpIjGsfq0+egLN5rGwjaJIRTStudg+Mw8oEqQXo9VHbacv6NnmtG8BAHPokUpus1LaXCyyfDOgFYSp/xsupPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js" integrity="sha512-3jC1jPxa1EFMDjrszKdUOQ4MwWCVtk+cbhci1HyBf5n1U9Dkd72d3wMVsmC+xDXSnaLFSiBhkjaQO0ESMdnJiw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/prolog.min.js" integrity="sha512-JrKKSmGetELE+7du9jrRs4R9dC6QO5gFIk5s7RRI7wWdG3yueqjDOJPX/3eDc83bE/qyNjMr4gaYVqKDhjQkpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js" integrity="sha512-wW8K3TEH5ZViD4aMPzwPdhXKs/Kb5MAm7qLRd3QliYlHy0u9utSKZsZzqlZAgJ9xxXp81acwnrZVZ8oTfoLG1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/ruby.min.js" integrity="sha512-WdpQuWVTzMUvFHFsrEmohW9WKfnANS0+lfKVeS7Hgs5jCAA94rmAfQ81v0RSLFrN4SdTH/Ns38Oz3NQuySHtmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js" integrity="sha512-vp/BmF+BW+m/wuIgSZQYqoB2Rwz46sD8YnVM51unvyvOcqYOwyP1BMAO4lHfmVpSZ+eeJAPnkk2fv7mdQN5HDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js" integrity="sha512-64D4TOespcFsS6vnnca/aON48/6XNG61BAtQj7WG+8qAZXclMfx92cXC7l56/FuHLNY9FeDvLPqVuT3x4AptgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js" integrity="sha512-GsPn8jZedZaPLThVdRVJ9kvS02HmLZBsoC9qon3IZE8Al7pUBlDIK4IzAtMbxtZ2GtLMFhHusOLTwf2JIDr0oA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Scripts/ChallengesData.js"></script>
+    <script src="Scripts/ChallengesList.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/haskell.min.js" integrity="sha512-BLdZOnIuKk+IzhLlZ717U+NlMPDI0kb/F6CcaYZHT9j73TLHEHKIVFeG5jl5EBGylm5cGaELO6N64cIZjk8H2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/x86asm.min.js" integrity="sha512-PsyL9V1oGfx9uQV60+pJM/GpWAefAPX7sdnE2rQ/jILKHxZCk2TPHMHLOSoihzaatNHpBzksS0EpMqnBXC7XGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js" integrity="sha512-9Ge7wPRBM6DUCnE7Citv0pBWqt7hXeX2732053zamwp+11RX6HBQ7DdXRMNZM6VQmnwKXFKBLE7jS0dgWXUPnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js" integrity="sha512-XtCbcs/SrnccRnVorQSvPCj3Xon5JzzolJpB8yxlUAlzxqaFxkLzvVbVvjAs0FVigBM3MNu611uQ8eyINq4w7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js" integrity="sha512-2Mz4HPfbnPT0gLJwtbyMgAXzvsHt73xiIIkyFsrC0pc4XEf/UMQon8eXhdPQIideGBUla7eE1inLnzm9L/ZTFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js" integrity="sha512-sQgzBflUTahXrlGeMqS6Z+ugjLta005qmvARRaCSEJ8aflXe03DNo8VzxCDHGzqAUqe1+iRnLfCP5ivekMZnGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/kotlin.min.js" integrity="sha512-4vpIjGsfq0+egLN5rGwjaJIRTStudg+Mw8oEqQXo9VHbacv6NnmtG8BAHPokUpus1LaXCyyfDOgFYSp/xsupPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js" integrity="sha512-3jC1jPxa1EFMDjrszKdUOQ4MwWCVtk+cbhci1HyBf5n1U9Dkd72d3wMVsmC+xDXSnaLFSiBhkjaQO0ESMdnJiw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/prolog.min.js" integrity="sha512-JrKKSmGetELE+7du9jrRs4R9dC6QO5gFIk5s7RRI7wWdG3yueqjDOJPX/3eDc83bE/qyNjMr4gaYVqKDhjQkpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js" integrity="sha512-wW8K3TEH5ZViD4aMPzwPdhXKs/Kb5MAm7qLRd3QliYlHy0u9utSKZsZzqlZAgJ9xxXp81acwnrZVZ8oTfoLG1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/ruby.min.js" integrity="sha512-WdpQuWVTzMUvFHFsrEmohW9WKfnANS0+lfKVeS7Hgs5jCAA94rmAfQ81v0RSLFrN4SdTH/Ns38Oz3NQuySHtmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js" integrity="sha512-vp/BmF+BW+m/wuIgSZQYqoB2Rwz46sD8YnVM51unvyvOcqYOwyP1BMAO4lHfmVpSZ+eeJAPnkk2fv7mdQN5HDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js" integrity="sha512-64D4TOespcFsS6vnnca/aON48/6XNG61BAtQj7WG+8qAZXclMfx92cXC7l56/FuHLNY9FeDvLPqVuT3x4AptgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js" integrity="sha512-GsPn8jZedZaPLThVdRVJ9kvS02HmLZBsoC9qon3IZE8Al7pUBlDIK4IzAtMbxtZ2GtLMFhHusOLTwf2JIDr0oA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
 </html>

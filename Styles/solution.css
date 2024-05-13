@@ -1,6 +1,6 @@
 body > .solution-content {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100vw;
   height: calc(100vh - 4rem);
   padding: 1.5rem;
@@ -11,9 +11,11 @@ body > .solution-content {
 .info {
   position: relative;
   flex-grow: 1;
-  max-width: 49%;
+  max-width: 49vw;
+  width: 50%;
   height: 100%;
   border-radius: 1rem;
+  line-height: 1.5;
   background-color: #222327;
   overflow: hidden;
 }
@@ -45,15 +47,75 @@ body > .solution-content {
 .info .info-container {
   position: relative;
   width: 100%;
+  max-width: 100%;
   height: calc(100% - 2.5rem);
   margin-top: 2.5rem;
   padding: 1rem;
   overflow: scroll;
 }
 
+.info pre {
+  width: 100%;
+  white-space: pre;
+  overflow-x: scroll;
+}
+
+.info pre code {
+  display: block;
+  min-width: 100%;
+  width: fit-content;
+  padding: 1em;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+.info code {
+  padding: 2px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.25rem;
+  white-space: pre;
+}
+
+.info table {
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+  margin: 2em auto;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  text-align: left;
+  white-space: pre;
+  overflow-x: scroll;
+}
+
+.info table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.info table th {
+  font-weight: 800;
+  vertical-align: bottom;
+  padding-right: 0.5714286em;
+  padding-bottom: 0.5714286em;
+  padding-left: 0.5714286em;
+}
+
+.info table td {
+  vertical-align: baseline;
+  padding: 0.5714286em;
+}
+
+.info table pre {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  background-color: #131414;
+  overflow-x: unset;
+}
+
 /* ------------- tab select ------------- */
 .info .tab-select {
   display: flex;
+  margin-bottom: 1rem;
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -76,7 +138,8 @@ body > .solution-content {
 .solution {
   position: relative;
   flex-grow: 1;
-  max-width: 50%;
+  max-width: 49vw;
+  width: 50%;
   height: 100%;
   border-radius: 1rem;
   background-color: #131414;
@@ -118,7 +181,7 @@ body > .solution-content {
 }
 
 /* ------------- solution language select ------------- */
-.langauge-select {
+.language-select {
   position: relative;
   height: 2rem;
   width: 9rem;
@@ -148,14 +211,14 @@ body > .solution-content {
   background-size: 0.65em auto, 100%;
 }
 
-.langauge-select .current-language img {
+.language-select .current-language img {
   width: 1.5rem;
   aspect-ratio: 1;
   margin-right: 0.25rem;
   filter: brightness(0) invert(1);
 }
 
-.langauge-select .current-language:hover {
+.language-select .current-language:hover {
   background-color: #373940;
 }
 
