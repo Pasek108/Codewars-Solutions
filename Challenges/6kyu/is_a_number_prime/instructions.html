@@ -1,0 +1,38 @@
+<div class="markdown prose max-w-5xl mx-auto overflow-x-auto break-words" id="description"><p>Define a function that takes an integer argument and returns a logical value <code>true</code> or <code>false</code> depending on if the integer is a prime.</p>
+<p>Per Wikipedia, a prime number ( or a prime ) is a natural number greater than <code>1</code> that has no positive divisors other than <code>1</code> and itself.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>You can assume you will be given an integer input.</li>
+<li>You can not assume that the integer will be only positive. You may be given negative numbers as well ( or <code>0</code> ).</li>
+<li><strong>NOTE on performance</strong>: There are no fancy optimizations required, but still <em>the</em> most trivial solutions might time out. Numbers go up to 2^31 ( or similar, depending on language ). Looping all the way up to <code>n</code>, or <code>n/2</code>, will be too slow.</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="language-c"><span class="cm-variable">is_prime</span>(<span class="cm-number">1</span>)  <span class="cm-comment">/* false */</span>
+<span class="cm-variable">is_prime</span>(<span class="cm-number">2</span>)  <span class="cm-comment">/* true  */</span>
+<span class="cm-variable">is_prime</span>(<span class="cm-operator">-</span><span class="cm-number">1</span>) <span class="cm-comment">/* false */</span>
+</code></pre>
+<pre style="display: none;"><code class="language-nasm"><span class="cm-keyword">mov</span> <span class="cm-builtin">edi</span>, <span class="cm-number">1</span>
+<span class="cm-keyword">call</span> is_prime    <span class="cm-comment">; EAX &lt;- 0 (false)</span>
+
+<span class="cm-keyword">mov</span> <span class="cm-builtin">edi</span>, <span class="cm-number">2</span>
+<span class="cm-keyword">call</span> is_prime    <span class="cm-comment">; EAX &lt;- 1 (true)</span>
+
+<span class="cm-keyword">mov</span> <span class="cm-builtin">edi</span>, -<span class="cm-number">1</span>
+<span class="cm-keyword">call</span> is_prime    <span class="cm-comment">; EAX &lt;- 0 (false)</span>
+</code></pre>
+<pre style="display: none;"><code class="language-c++">bool isPrime(5) = return true
+</code></pre>
+<pre style="display: none;"><code class="language-d"><span class="cm-builtin">bool</span> <span class="cm-variable">isPrime</span>(<span class="cm-number">5</span>) <span class="cm-operator">=</span> <span class="cm-keyword">return</span> <span class="cm-atom">true</span>
+</code></pre>
+<pre style="display: none;"><code class="language-pascal"><span class="cm-variable">IsPrime</span>(<span class="cm-number">1</span>) <span class="cm-operator">=</span> <span class="cm-variable">false</span>
+<span class="cm-variable">IsPrime</span>(<span class="cm-number">2</span>) <span class="cm-operator">=</span> <span class="cm-variable">true</span>
+<span class="cm-variable">IsPrime</span>(<span class="cm-operator">-</span><span class="cm-number">1</span>) <span class="cm-operator">=</span> <span class="cm-variable">false</span>
+</code></pre>
+<pre style="display: none;"><code class="language-perl"><span class="cm-meta">is_prime</span>(<span class="cm-number">1</span>)  <span class="cm-comment"># 0</span>
+<span class="cm-meta">is_prime</span>(<span class="cm-number">2</span>)  <span class="cm-comment"># 1</span>
+<span class="cm-meta">is_prime</span>(<span class="cm-operator">-</span><span class="cm-number">1</span>) <span class="cm-comment"># 0</span>
+</code></pre>
+<pre style="display: none;"><code class="language-lambdacalc"><span class="cm-text">is-prime</span> <span class="cm-number">1</span> <span class="cm-text">-&gt;</span> <span class="cm-text">False</span>
+<span class="cm-text">is-prime</span> <span class="cm-number">2</span> <span class="cm-text">-&gt;</span> <span class="cm-text">True</span>
+</code></pre>
+</div>

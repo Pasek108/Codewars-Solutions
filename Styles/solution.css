@@ -193,7 +193,7 @@ body > .solution-content {
 
 .current-language {
   position: absolute;
-  z-index: 10;
+  z-index: 2;
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -1,0 +1,45 @@
+<div class="markdown prose max-w-5xl mx-auto overflow-x-auto break-words" id="description"><p>The DVD rental store is doing a marketing campaign to promote their latest collection of films featuring actors whose names start with the letter "J". The store owner, who is a big fan of actors with "J" names, insists that they must be prominently displayed in the store and featured in all their advertisements.</p>
+<p>Despite not understanding the store owner's peculiar tastes, you need to get the necessary list of actors. Thoughts about the new Playstation that will be bought from the next salary warm your heart while working on this task.</p>
+<h4 id="task">Task:</h4>
+<p>Write a SQL query that retrieves the <code>actor_id</code>, <code>full_name</code>, and <code>film_title</code> of the most recent film that an actor whose first name starts with the letter "J" has participated in. The report should be ordered by actor_id in ascending order.</p>
+<h5 id="notes">Notes:</h5>
+<ul>
+<li><p>Unfortunately, DVD Rental DB does not have a timestamp for the release date of the film (only year), so by "the most recent film" we will simply take "the film with the biggest film_id". So, for example, if the actor has been starred in the films that have ids of 545 and 4, and 405 - we need to take the film with an id of 545</p>
+</li>
+<li><p>for the sample tests, static dump of <a href="http://www.postgresqltutorial.com/postgresql-sample-database/" data-turbolinks="false" target="_blank">DVD Rental Sample Database</a> is used, for the final solution - random tests.</p>
+</li>
+</ul>
+<p>Good luck!</p>
+<p>P. S. My goal is to create plenty of high-quality SQL katas because Codewars is definitely missing that. Please check out <a href="https://www.codewars.com/users/bornForThis/authored" data-turbolinks="false" target="_blank">my other katas</a>. Any feedback is appreciated. Cheers!</p>
+<h3 id="schema">Schema</h3>
+<h4 id="film-table"><code>film</code> table:</h4>
+<pre><code>Column           | Type     | Modifiers
+-----------------+----------+----------
+film_id          | integer  | not null
+title            | varchar  | not null
+description      | text     | not null
+rating           | varchar  | not null
+</code></pre>
+<h4 id="film_actor-table"><code>film_actor</code> table:</h4>
+<pre><code>Column   | Type     | Modifiers
+---------+----------+----------
+id       | integer  | not null
+film_id  | integer  | not null
+actor_id | integer  | not null
+</code></pre>
+<h4 id="actor-table"><code>actor</code> table:</h4>
+<pre><code>Column      | Type      | Modifiers
+------------+-----------+----------
+actor_id    | integer   | not null
+first_name  | varchar   | not null
+last_name   | varchar   | not null
+</code></pre>
+<h3 id="desired-output">Desired Output</h3>
+<p>The desired output should look like this:</p>
+<pre><code>actor_id | full_name           |     film_title        
+---------+---------------------+-----------------------
+   4     | Jennifer Davis      | Unforgiven Zoolander | 
+   27    | Johnny Lollobrigida | Sunrise League       |
+...
+</code></pre>
+</div>

@@ -6,7 +6,6 @@ const languages_data = [
     folder_name: "javascript",
     hilighter_name: "javascript",
     file_extension: "js",
-    problems_solved: 1,
     kyu: 3,
   },
   {
@@ -14,7 +13,6 @@ const languages_data = [
     folder_name: "typescript",
     hilighter_name: "typescript",
     file_extension: "ts",
-    problems_solved: 0,
     kyu: 7,
   },
   {
@@ -22,7 +20,6 @@ const languages_data = [
     folder_name: "python",
     hilighter_name: "python",
     file_extension: "py",
-    problems_solved: 0,
     kyu: 6,
   },
   {
@@ -30,7 +27,6 @@ const languages_data = [
     folder_name: "java",
     hilighter_name: "java",
     file_extension: "java",
-    problems_solved: 0,
     kyu: 7,
   },
   {
@@ -38,7 +34,6 @@ const languages_data = [
     folder_name: "php",
     hilighter_name: "php",
     file_extension: "php",
-    problems_solved: 0,
     kyu: 5,
   },
   {
@@ -46,7 +41,6 @@ const languages_data = [
     folder_name: "sql",
     hilighter_name: "sql",
     file_extension: "sql",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -54,7 +48,6 @@ const languages_data = [
     folder_name: "ruby",
     hilighter_name: "ruby",
     file_extension: "rb",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -62,7 +55,6 @@ const languages_data = [
     folder_name: "rust",
     hilighter_name: "rust",
     file_extension: "rs",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -70,7 +62,6 @@ const languages_data = [
     folder_name: "cpp",
     hilighter_name: "cpp",
     file_extension: "cpp",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -78,7 +69,6 @@ const languages_data = [
     folder_name: "csharp",
     hilighter_name: "csharp",
     file_extension: "cs",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -86,7 +76,6 @@ const languages_data = [
     folder_name: "c",
     hilighter_name: "c",
     file_extension: "c",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -94,7 +83,6 @@ const languages_data = [
     folder_name: "nasm",
     hilighter_name: "x86asm",
     file_extension: "asm",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -102,7 +90,6 @@ const languages_data = [
     folder_name: "kotlin",
     hilighter_name: "kotlin",
     file_extension: "kt",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -110,7 +97,6 @@ const languages_data = [
     folder_name: "haskell",
     hilighter_name: "haskell",
     file_extension: "hs",
-    problems_solved: 0,
     kyu: 8,
   },
   {
@@ -118,7 +104,6 @@ const languages_data = [
     folder_name: "prolog",
     hilighter_name: "prolog",
     file_extension: "pl",
-    problems_solved: 0,
     kyu: 8,
   },
 ]

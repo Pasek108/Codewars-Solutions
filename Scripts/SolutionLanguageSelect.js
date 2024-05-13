@@ -48,9 +48,9 @@ class SolutionLanguageSelect {
     this.hideLanguagesList()
   }
 
-  createLanguagesList(solution_data) {
+  createLanguagesList(solution_data, lang_id) {
     this.current_solution = solution_data
-    this.current_language = solution_data.languages[0]
+    this.current_language = solution_data.languages[lang_id]
 
     const current_language = this.createLanguageOption(this.current_language)
     this.current_language_container.innerHTML = current_language.innerHTML
@@ -59,7 +59,7 @@ class SolutionLanguageSelect {
 
     for (let i = 0; i < solution_data.languages.length; i++) {
       const language_option = this.createLanguageOption(solution_data.languages[i])
-      if (i === 0) language_option.className = "language active"
+      if (i === lang_id) language_option.className = "language active"
 
       language_option.addEventListener("click", (evt) => this.selectLanguage(evt, i))
 

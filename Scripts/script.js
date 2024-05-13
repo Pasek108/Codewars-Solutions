@@ -15,14 +15,13 @@ const default_solution_data = {
       folder_name: "javascript",
       hilighter_name: "javascript",
       file_extension: "js",
-      problems_solved: 1,
       kyu: 3,
     },
   ],
 }
 
 const solution_preview = new SolutionPreview()
-solution_preview.loadSolution(default_solution_data)
+solution_preview.loadSolution(default_solution_data, 0)
 
 function loadHTML(html_path, container) {
   fetch(html_path)

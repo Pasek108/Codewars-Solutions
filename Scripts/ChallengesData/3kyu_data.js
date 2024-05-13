@@ -4,9 +4,4 @@
 // [js, ts, py, java, php, sql, rb, rs, c++, c#,  c, nasm, kt, hs, pl]
 
 const challenges_3kyu_data = [
-  {
-    languages: [],
-    link: "",
-    name: "",
-  },
 ]

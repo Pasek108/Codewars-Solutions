@@ -41,7 +41,9 @@ class ChallengesList {
 
     this.languages_count = this.container.querySelectorAll("li span.count")
     this.languages_count.forEach((count, index) => {
-      count.innerHTML = languages_data[index].problems_solved
+      const lang_name = languages_data[index].folder_name
+      const problems_solved = this.container.querySelectorAll(`.challenge.${lang_name}`).length
+      count.innerHTML = problems_solved
     })
 
     /* ------------------------- difficulty ------------------------- */
@@ -89,8 +91,8 @@ class ChallengesList {
     this.challenges_lists.forEach((list) => list.setAttribute("hidden", true))
     this.challenges_lists[difficulty_id].removeAttribute("hidden")
 
-    let lang_name = languages_data[this.current_language_id].folder_name
-    let items_count = this.challenges_lists[difficulty_id].querySelectorAll(`.challenge.${lang_name}:not([hidden])`).length
+    const lang_name = languages_data[this.current_language_id].folder_name
+    const items_count = this.challenges_lists[difficulty_id].querySelectorAll(`.challenge.${lang_name}:not([hidden])`).length
 
     this.no_data_in_group.forEach((no_data) => no_data.setAttribute("hidden", true))
     if (items_count === 0) this.no_data_in_group[difficulty_id].removeAttribute("hidden")
@@ -119,7 +121,7 @@ class ChallengesList {
   }
 
   loadSolution(solution_data) {
-    solution_preview.loadSolution(solution_data)
+    solution_preview.loadSolution(solution_data, this.current_language_id)
     this.switchChallengesList()
   }
 }

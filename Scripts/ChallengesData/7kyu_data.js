@@ -5,8 +5,8 @@
 
 const challenges_7kyu_data = [
   {
-    languages: [],
-    link: "",
-    name: "",
+    languages: [0],
+    link: "https://www.codewars.com/kata/5a25ac6ac5e284cfbe000111",
+    name: "Coloured Triangles",
   },
 ]

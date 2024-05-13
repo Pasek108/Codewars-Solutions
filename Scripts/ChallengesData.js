@@ -53,14 +53,14 @@ class ChallengesData {
 
   createInstructionsLink(kyu, name) {
     const level_folder = `${kyu}kyu`
-    const solution_folder = name.toLowerCase().replaceAll(" ", "_")
+    const solution_folder = name.toLowerCase().replaceAll(" ", "_").match(/[1-9a-z_]/g).join("");
 
     return `Challenges/${level_folder}/${solution_folder}/instructions.html`
   }
 
   createDescriptionLink(kyu, name, language_data) {
     const level_folder = `${kyu}kyu`
-    const solution_folder = name.toLowerCase().replaceAll(" ", "_")
+    const solution_folder = name.toLowerCase().replaceAll(" ", "_").match(/[1-9a-z_]/g).join("");
     const language_folder = language_data.folder_name
 
     return `Challenges/${level_folder}/${solution_folder}/${language_folder}/description.html`
@@ -68,7 +68,7 @@ class ChallengesData {
 
   createCodeLink(kyu, name, language_data) {
     const level_folder = `${kyu}kyu`
-    const solution_folder = name.toLowerCase().replaceAll(" ", "_")
+    const solution_folder = name.toLowerCase().replaceAll(" ", "_").match(/[1-9a-z_]/g).join("");
     const language_folder = language_data.folder_name
     const file_extension = language_data.file_extension
 

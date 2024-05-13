@@ -7,33 +7,55 @@ class SolutionPreview {
     this.instructions_container = this.container.querySelector(".instructions")
     this.description_container = this.container.querySelector(".description")
 
-    // info title
+    /* ------------------------- fullscreen ------------------------- */
+    this.sections = [this.container.querySelector(".info"), this.container.querySelector(".solution")]
+
+    this.fullscreen_buttons = this.container.querySelectorAll(".fullscreen-button")
+    this.fullscreen_buttons[0].addEventListener("click", () => this.toggleFullscreen(0))
+    this.fullscreen_buttons[1].addEventListener("click", () => this.toggleFullscreen(1))
+
+    /* ------------------------- info title ------------------------- */
     this.kyu_container = this.container.querySelector(".kyu")
     this.title_container = this.container.querySelector("header a")
 
-    // info tabs
+    /* ------------------------- info tabs ------------------------- */
     this.instructions_tab = document.querySelector(".instructions-tab")
     this.instructions_tab.addEventListener("click", () => this.switchTab("instructions"))
 
     this.description_tab = document.querySelector(".description-tab")
     this.description_tab.addEventListener("click", () => this.switchTab("description"))
 
-    // language
+    /* ------------------------- language ------------------------- */
     this.language_select = new SolutionLanguageSelect(this.loadSolutionLanguage.bind(this))
 
-    // code
+    /* ------------------------- code ------------------------- */
     this.code_container = this.container.querySelector(".code")
     this.code = this.code_container.querySelector("code")
   }
 
-  loadSolution(solution_data) {
+  toggleFullscreen(section_id) {
+    const target = this.fullscreen_buttons[section_id]
+    const container = this.sections[section_id]
+
+    if (target.src.includes("fullscreen")) {
+      target.src = target.src.replace("fullscreen", "offscreen")
+      container.classList.add("fullscreen")
+    } else {
+      target.src = target.src.replace("offscreen", "fullscreen")
+      container.classList.remove("fullscreen")
+    }
+  }
+
+  loadSolution(solution_data, language_id) {
     this.setKyu(solution_data.kyu)
     this.setTitle(solution_data.link, solution_data.name)
 
     loadHTML(solution_data.links.instructions, this.instructions_container)
 
-    this.language_select.createLanguagesList(solution_data)
-    this.loadSolutionLanguage(solution_data, 0)
+    const lang_id = language_id == 0 ? 0 : solution_data.languages.findIndex((lang) => lang === languages_data[language_id])
+
+    this.language_select.createLanguagesList(solution_data, lang_id)
+    this.loadSolutionLanguage(solution_data, lang_id)
 
     this.switchTab("instructions")
   }
