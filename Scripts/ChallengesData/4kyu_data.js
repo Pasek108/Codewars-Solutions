@@ -29,4 +29,19 @@ const challenges_4kyu_data = [
     link: "https://www.codewars.com/kata/5324945e2ece5e1f32000370",
     name: "Sum Strings as Numbers",
   },
+  {
+    languages: [0],
+    link: "https://www.codewars.com/kata/54b72c16cd7f5154e9000457",
+    name: "Decode the Morse code, advanced",
+  },
+  {
+    languages: [0],
+    link: "https://www.codewars.com/kata/54d130bb11b05bd224000212",
+    name: "Big Arithmetic - integer add/subtract",
+  },
+  {
+    languages: [0],
+    link: "https://www.codewars.com/kata/52742f58faf5485cae000b9a/train/javascript",
+    name: "Human readable duration format",
+  },
 ]

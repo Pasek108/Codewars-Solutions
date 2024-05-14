@@ -1,0 +1,59 @@
+<div class="markdown prose max-w-5xl mx-auto overflow-x-auto break-words" id="description"><p>This is the first part of this kata series. Second part is <a href="https://www.codewars.com/kata/assembler-interpreter-part-ii/" data-turbolinks="false" target="_blank">here</a>.</p>
+<p>We want to create a simple interpreter of assembler which will support the following instructions:</p>
+<ul>
+<li><code>mov x y</code> - copies <code>y</code> (either a constant value or the content of a register) into register <code>x</code></li>
+<li><code>inc x</code> - increases the content of the register <code>x</code> by one</li>
+<li><code>dec x</code> - decreases the content of the register <code>x</code> by one</li>
+<li><code>jnz x y</code> - jumps to an instruction <code>y</code> steps away (positive means forward, negative means backward, y can be a register or a constant), but only if <code>x</code> (a constant or a register) is not zero</li>
+</ul>
+<p>Register names are alphabetical (letters only). Constants are always integers (positive or negative).</p>
+<p>Note: the <code>jnz</code> instruction moves relative to itself. For example, an offset of <code>-1</code> would continue at the previous instruction, while an offset of <code>2</code> would skip over the next instruction.</p>
+<p>The function will take an input list with the sequence of the program instructions and will execute them. The program ends when there are no more instructions to execute, then it returns a dictionary (a table in COBOL) with the contents of the registers.</p>
+<p>Also, every <code>inc</code>/<code>dec</code>/<code>jnz</code> on a register will always be preceeded by a <code>mov</code> on the register first, so you don't need to worry about uninitialized registers.</p>
+<h2 id="example">Example</h2>
+<pre><code>["mov a 5"; "inc a"; "dec a"; "dec a"; "jnz a -1"; "inc a"]
+
+visualized:
+
+mov a 5
+inc a
+dec a
+dec a
+jnz a -1
+inc a
+</code></pre>
+<p>The above code will:</p>
+<ul>
+<li>set register <code>a</code> to <code>5</code>,</li>
+<li>increase its value by <code>1</code>,</li>
+<li>decrease its value by <code>2</code>,</li>
+<li>then decrease its value until it is zero (<code>jnz a -1</code> jumps to the previous instruction if <code>a</code> is not zero)</li>
+<li>and then increase its value by <code>1</code>, leaving register <code>a</code> at <code>1</code></li>
+</ul>
+<p>So, the function should return:</p>
+<pre style="display: none;"><code class="language-scala"><span class="cm-type">Map</span>(<span class="cm-string">"a"</span><span class="cm-operator">-&gt;</span><span class="cm-number">1</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-python">{<span class="cm-string">'a'</span>: <span class="cm-number">1</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-java">{<span class="cm-variable">a</span><span class="cm-operator">=</span><span class="cm-number">1</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-keyword">new</span> <span class="cm-variable">Dictionary</span><span class="cm-operator">&lt;</span><span class="cm-type">string</span>, <span class="cm-type">int</span><span class="cm-operator">&gt;</span> { { <span class="cm-string">"a"</span> , <span class="cm-number">1</span> } };
+</code></pre>
+<pre><code class="language-haskell"><span class="cm-variable">fromList</span> [(<span class="cm-string">"a"</span>, <span class="cm-number">1</span>)]
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">Dict</span>{<span class="cm-variable">String</span>,<span class="cm-variable">Number</span>}(<span class="cm-string">"a</span><span class="cm-string">"</span><span class="cm-operator">=&gt;</span><span class="cm-number">1</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-rust">{<span class="cm-string">"</span><span class="cm-string">a</span><span class="cm-string">"</span>: <span class="cm-number">1</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-clojure"><span class="cm-bracket">{</span><span class="cm-atom">:a</span> <span class="cm-number">1</span><span class="cm-bracket">}</span>
+</code></pre>
+<pre style="display: none;"><code class="language-go"><span class="cm-keyword">map</span>[<span class="cm-keyword">string</span>]<span class="cm-keyword">int</span>{<span class="cm-string">"a"</span>: <span class="cm-number">1</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-crystal">{<span class="cm-string">"a"</span> <span class="cm-operator">=</span><span class="cm-operator">&gt;</span> <span class="cm-number">1</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-cobol">      [[<span class="cm-string">"</span><span class="cm-string">a"</span>, <span class="cm-number">1</span>]]
+</code></pre>
+<pre style="display: none;"><code class="language-c">  (<span class="cm-type">int</span>[]){[<span class="cm-string">'a'</span>] <span class="cm-operator">=</span> <span class="cm-number">1</span>}
+</code></pre>
+<p>This kata is based on the <a href="https://adventofcode.com/2016/day/12" data-turbolinks="false" target="_blank">Advent of Code 2016 - day 12</a></p>
+</div>

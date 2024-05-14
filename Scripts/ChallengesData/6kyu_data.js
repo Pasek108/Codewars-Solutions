@@ -39,4 +39,14 @@ const challenges_6kyu_data = [
     link: "https://www.codewars.com/kata/5803ee0ed5438edcc9000087",
     name: "Padovan numbers",
   },
+  {
+    languages: [0],
+    link: "https://www.codewars.com/kata/54b724efac3d5402db00065e",
+    name: "Decode the Morse code",
+  },
+  {
+    languages: [0],
+    link: "https://www.codewars.com/kata/59c053f070a3b7d19100007e",
+    name: "Line Safari : Point distance from a line",
+  },
 ]

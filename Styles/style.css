@@ -15,6 +15,7 @@ html {
 body {
   background-color: #16171b;
   color: #efefef;
+  overflow: hidden;
 }
 
 code {
@@ -41,6 +42,10 @@ body > header {
   padding: 0.5rem 1.5rem;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.title {
+  position: relative;
 }
 
 .codewars-link {
@@ -80,6 +85,28 @@ body > header {
 .show-challenges:hover {
   border: 1px solid rgba(255, 255, 255, 0.75);
   background-color: #222327;
+}
+
+.help-button {
+  position: absolute;
+  top: -0.125rem;
+  right: -3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  background-color: #222327;
+  cursor: pointer;
+}
+
+.help-button:hover {
+  background-color: #373940;
 }
 
 /* -------------------------- fullscreen -------------------------- */

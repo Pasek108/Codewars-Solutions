@@ -1,0 +1,30 @@
+<div class="markdown prose max-w-5xl mx-auto overflow-x-auto break-words" id="description"><h2 id="theoretical-material">Theoretical Material</h2>
+<p>You are given two vectors starting from the origin (x=0, y=0) with coordinates (x1,y1) and (x2,y2). Your task is to find out if these vectors are collinear. Collinear vectors are vectors that lie on the same straight line. They can be directed in the same or opposite directions. One vector can be obtained from another by multiplying it by a certain number. In terms of coordinates, vectors (x1, y1) and (x2, y2) are collinear if (x1, y1) = (k*x2, k*y2) , where k is any number acting as a coefficient.</p>
+<img style="background:rgba(255,255,255,0.85)" src="https://d138zd1ktt9iqe.cloudfront.net/media/seo_landing_files/collinear-vectors-1627481628.png">
+
+<p>For more information, check out this <a href="https://www.cuemath.com/geometry/collinear-vectors/" data-turbolinks="false" target="_blank">article on collinearity</a>.</p>
+<h2 id="problem-description">Problem Description</h2>
+<p>Write the function <code>collinearity(x1, y1, x2, y2)</code>, which returns a Boolean type depending on whether the vectors are collinear or not.</p>
+<pre><code>all coordinates are integers
+-1000 &lt;= any coordinate &lt;= 1000
+</code></pre>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>All vectors start from the origin (x=0, y=0).</li>
+<li>Be careful when handling cases where x1, x2, y1, or y2 are zero to avoid division by zero errors.</li>
+<li>A vector with coordinates (0, 0) is collinear to all vectors.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<pre><code>(1,1,1,1) ➞ true
+(1,2,2,4) ➞ true
+(1,1,6,1) ➞ false
+(1,2,-1,-2) ➞ true
+(1,2,1,-2) ➞ false
+(4,0,11,0) ➞ true
+(0,1,6,0) ➞ false
+(4,4,0,4) ➞ false
+(0,0,0,0) ➞ true
+(0,0,1,0) ➞ true
+(5,7,0,0) ➞ true
+</code></pre>
+</div>

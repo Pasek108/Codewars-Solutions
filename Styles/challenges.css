@@ -14,7 +14,7 @@ body > .challenges-select {
   position: absolute;
   top: 0.5rem;
   left: 0;
-  z-index: 100;
+  z-index: 5;
   height: calc(100vh - 6rem);
   width: fit-content;
   min-width: 5rem;
@@ -90,7 +90,7 @@ nav li:not(.active):hover:after {
 
 nav li.active {
   position: sticky;
-  z-index: 10;
+  z-index: 6;
   top: 0;
   bottom: 0;
 }

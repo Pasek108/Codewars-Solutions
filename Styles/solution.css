@@ -134,6 +134,31 @@ body > .solution-content {
   background-color: #bb432c;
 }
 
+.info .tab-select .instructions-tab {
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.info .description {
+  line-height: 1.5;
+}
+
+.info .description h2 {
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.info .description p {
+  margin: 0.5rem 0;
+}
+
+.info .description section {
+  margin-bottom: 1.5rem;
+}
+
+.info .description pre {
+  margin-bottom: -0.5rem;
+}
+
 /* -------------------------- solution -------------------------- */
 .solution {
   position: relative;

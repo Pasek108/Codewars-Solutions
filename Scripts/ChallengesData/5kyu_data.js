@@ -19,4 +19,9 @@ const challenges_5kyu_data = [
     link: "https://www.codewars.com/kata/55db23c6ab208d61e10000af",
     name: "Subtract big numbers",
   },
+  {
+    languages: [0],
+    link: "https://www.codewars.com/kata/58e24788e24ddee28e000053",
+    name: "Simple assembler interpreter",
+  },
 ]

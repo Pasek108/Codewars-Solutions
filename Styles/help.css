@@ -1,0 +1,80 @@
+.help-content {
+  position: absolute;
+  z-index: 10;
+  top: 4rem;
+  left: 0;
+  max-width: 100vw;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  padding: 1.5rem;
+  overflow-y: scroll;
+  background-color: #222327; /*#16171b*/
+}
+
+/* ------------- tab select ------------- */
+.help-content .tab-select {
+  display: flex;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.help-content .tab-select .tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 0.5rem 1rem;
+  background-color: #16171b;
+  cursor: pointer;
+}
+
+.help-content .tab-select .tab.active {
+  background-color: #bb432c;
+}
+
+.ranks-tab {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ------------- ranks ------------- */
+.help-content .ranks {
+  display: flex;
+  flex-direction: column;
+}
+
+.help-content .ranks .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.help-content .ranks .row .level {
+  flex-grow: 1;
+  width: calc(50% - 0.75rem);
+  min-width: 25rem;
+}
+
+.help-content .ranks .row h2 {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.help-content .ranks .row p {
+  position: relative;
+  text-indent: 3.75rem;
+}
+
+.help-content .ranks .row .kyu {
+  /*position: static;*/
+  right: unset;
+  left: 0;
+  display: inline-flex;
+  text-indent: 0;
+}

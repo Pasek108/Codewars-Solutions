@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./Styles/style.css" />
     <link rel="stylesheet" href="./Styles/solution.css" />
     <link rel="stylesheet" href="./Styles/challenges.css" />
+    <link rel="stylesheet" href="./Styles/help.css" />
   </head>
   <body>
     <header>
@@ -22,10 +23,121 @@
         <a class="github-link" href="https://github.com/Pasek108"><img src="./Images/github_logo.svg" alt="github logo" />Artur Pas</a> -
         <a class="codewars-link" href="https://www.codewars.com/users/Artur%20Pas"><img src="./Images/codewars_logo.svg" alt="css battle logo" />Codewars</a>
         Solutions
+
+        <div class="help-button">?</div>
       </div>
 
       <button class="show-challenges">See all challenges</button>
     </header>
+
+    <div class="help-content" hidden>
+      <div class="tab-select">
+        <div class="tab general-info-tab active">General info</div>
+        <div class="tab ranks-tab">Ranks</div>
+        <div class="tab website-navigation-tab">Website navigation</div>
+      </div>
+
+      <div class="section general-info"></div>
+
+      <div class="section ranks" hidden>
+        <div class="row">
+          <h2>White (Beginner)</h2>
+
+          <div class="level">
+            <p><span class="kyu kyu-white">8 kyu</span> represent a beginner level. At this level, the kata are only challenging for users new to programming. This includes programming tasks such as:</p>
+            <ul>
+              <li>Defining a simple function (i.e. hello world)</li>
+              <li>Basic variable assignments</li>
+              <li>Fixing basic syntax issues</li>
+              <li>Trivial algorithms such as basic if/else statements</li>
+            </ul>
+          </div>
+
+          <div class="level">
+            <p><span class="kyu kyu-white">7 kyu</span> represent a beginner programming level. At this level, the kata will generally challenge users on their core language and API reference knowledge. Tasks such as:</p>
+            <ul>
+              <li>Iterating arrays and returning a subset of values</li>
+              <li>Basic data type manipulations</li>
+              <li>Basic functional or object-oriented concepts</li>
+              <li>Basic Regular Expressions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <h2 style="color: #ecb613">Yellow (Novice)</h2>
+
+          <div class="level">
+            <p><span class="kyu kyu-yellow">6 kyu</span> represent a novice programming level. At this level, the kata will start to include more advanced algorithmic challenges and more complex language features. It includes:</p>
+            <ul>
+              <li>Complex language features (closures, scopes, monads, etc)</li>
+              <li>Complex OOP/Functional concepts</li>
+              <li>Basic Design Patterns</li>
+              <li>Complex Regular Expressions</li>
+            </ul>
+          </div>
+
+          <div class="level">
+            <p><span class="kyu kyu-yellow">5 kyu</span> represent a novice programming level. At this level, the kata are similar to 6 kyu but more challenging. It includes:</p>
+            <ul>
+              <li>Complex language features that require mature OOP/Functional concepts</li>
+              <li>Advanced OOP/Functional concepts</li>
+              <li>Complex Design Patterns</li>
+              <li>Advanced regular expression usage</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <h2 style="color: #3c7ebb">Blue (Competent)</h2>
+
+          <div class="level">
+            <p><span class="kyu kyu-blue">4 kyu</span> represent a competent programming level. At this level, the kata begin to take some serious thought to complete. They include tasks that may handle:</p>
+            <ul>
+              <li>Computer science concepts utilizing complex algorithms</li>
+              <li>Advanced design patterns</li>
+              <li>Understanding intricate business requirements</li>
+              <li>Advanced concepts such as concurrency, parallelism, meta programming and cryptography</li>
+            </ul>
+          </div>
+
+          <div class="level">
+            <p><span class="kyu kyu-blue">3 kyu</span> represent a competent programming level. At this level, the kata are similar to 4 kyu but are more challenging. They include tasks that may handle:</p>
+            <ul>
+              <li>Computer science concepts utilizing advanced algorithms</li>
+              <li>Ability to implement advanced requirements in a scalable fashion</li>
+              <li>Basic AI/machine learning algorithms</li>
+              <li>Detailed usage of advanced concepts such as concurrency, parallelism and cryptography</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <h2 style="color: #866cc7">Purple (Proficient)</h2>
+
+          <div class="level">
+            <p><span class="kyu kyu-purple">2 kyu</span> represent a proficient programming level. At this level, kata require a mature understanding of complex programming concepts - concepts such as:</p>
+            <ul>
+              <li>Complex AI/machine learning algorithms</li>
+              <li>Reverse engineering techniques</li>
+              <li>Basic interpreters and compilers</li>
+              <li>Basic mini-programs with multiple feature requirements (such as a basic Markdown parser)</li>
+            </ul>
+          </div>
+
+          <div class="level">
+            <p><span class="kyu kyu-purple">1 kyu</span> represent a proficient programming level. At this level, kata are similar to 2 kyu but more challenging. They may include concepts such as:</p>
+            <ul>
+              <li>Advanced AI/machine learning algorithms</li>
+              <li>Complex interpreters and compilers</li>
+              <li>Complex Mini-programs with multiple feature requirements (such as a complete Markdown parser)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section website-navigation" hidden></div>
+    </div>
 
     <div class="solution-content">
       <div class="info">
@@ -33,7 +145,7 @@
           <div class="kyu kyu-white">8 kyu</div>
           <a target="_blank" href="https://www.codewars.com/kata/50654ddff44f800200000004/prolog">Line Safari - Is that a line?</a>
 
-          <img class="fullscreen-button" src="Images/fullscreen.svg" alt="fullscreen icon">
+          <img class="fullscreen-button" src="Images/fullscreen.svg" alt="fullscreen icon" />
         </header>
 
         <div class="info-container">
@@ -121,7 +233,7 @@
             </div>
           </div>
 
-          <img class="fullscreen-button" src="Images/fullscreen.svg" alt="fullscreen icon">
+          <img class="fullscreen-button" src="Images/fullscreen.svg" alt="fullscreen icon" />
         </header>
 
         <div class="code">
@@ -177,7 +289,7 @@
               <div class="kyu kyu-white">8 kyu</div>
             </li>
             <li>
-              <img class="cplusplus-logo" src="/Images/cplusplus_logo.svg" alt="cplusplus logo" />
+              <img class="cplusplus-logo" src="/Images/cpp_logo.svg" alt="cplusplus logo" />
               <span class="name">C++ (<span class="count">0</span>)</span>
               <div class="kyu kyu-white">8 kyu</div>
             </li>
@@ -204,7 +316,7 @@
             <li>
               <img class="haskell-logo" src="/Images/haskell_logo.svg" alt="haskell logo" />
               <span class="name">Haskell (<span class="count">0</span>)</span>
-              <div class="kyu kyu-white">8 kyu</div>
+              <div class="kyu kyu-white">7 kyu</div>
             </li>
             <li style="margin: 0">
               <img class="prolog-logo" src="/Images/prolog_logo.svg" alt="prolog logo" />
@@ -285,6 +397,7 @@
 
     <script src="Scripts/SolutionLanguageSelect.js"></script>
     <script src="Scripts/SolutionPreview.js"></script>
+    <script src="Scripts/Help.js"></script>
     <script src="Scripts/script.js"></script>
 
     <script src="Scripts/ChallengesData/languages_data.js"></script>

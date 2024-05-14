@@ -1,0 +1,13 @@
+<div class="markdown prose max-w-5xl mx-auto overflow-x-auto break-words" id="description"><p>Note: Libraries are disabled for this kata.</p>
+<p>Doing arithmetic with big numbers is impossible to do with regular integer types. In JavaScript (which represents numbers as 64-bit floats), anything beyond 2^53-1 becomes increasingly less accurate. For example, <code>12345678901234567890</code> becomes <code>12345678901234567000</code>— off by <code>890</code>.</p>
+<p>For this reason, the only way of <em>accurately</em> representing such large integers is as strings.</p>
+<p>You must write two functions, <code>bigAdd</code> and <code>bigSub</code>, which will both take two arguments. These two arguments will either be a valid representation of an integer as a string (negative or positive, no leading zeros), or a regular number. They will return the correct answer as a string, <code>bigAdd</code> summing the two values, and <code>bigSub</code> subtracting the second value from the first.</p>
+<p>For example:</p>
+<pre><code class="language-javascript"><span class="cm-variable">bigAdd</span>(<span class="cm-number">1</span>, <span class="cm-string">"123456789012345678901234567890"</span>) <span class="cm-operator">===</span> <span class="cm-string">"123456789012345678901234567891"</span>;
+<span class="cm-variable">bigSub</span>(<span class="cm-string">"123456789012345678901234567890"</span>, <span class="cm-number">1</span>) <span class="cm-operator">===</span> <span class="cm-string">"123456789012345678901234567889"</span>;
+</code></pre>
+<p>Remember, the values could be negative, and so the calculations should be made accordingly.</p>
+<pre><code class="language-javascript"><span class="cm-variable">bigAdd</span>(<span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-string">"123456789012345678901234567890"</span>) <span class="cm-operator">===</span> <span class="cm-string">"123456789012345678901234567889"</span>;
+<span class="cm-variable">bigSub</span>(<span class="cm-string">"123456789012345678901234567890"</span>, <span class="cm-operator">-</span><span class="cm-number">1</span>) <span class="cm-operator">===</span> <span class="cm-string">"123456789012345678901234567891"</span>;
+</code></pre>
+</div>

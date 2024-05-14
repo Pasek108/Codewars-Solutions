@@ -19,10 +19,10 @@ class SolutionPreview {
     this.title_container = this.container.querySelector("header a")
 
     /* ------------------------- info tabs ------------------------- */
-    this.instructions_tab = document.querySelector(".instructions-tab")
+    this.instructions_tab = this.container.querySelector(".instructions-tab")
     this.instructions_tab.addEventListener("click", () => this.switchTab("instructions"))
 
-    this.description_tab = document.querySelector(".description-tab")
+    this.description_tab = this.container.querySelector(".description-tab")
     this.description_tab.addEventListener("click", () => this.switchTab("description"))
 
     /* ------------------------- language ------------------------- */
