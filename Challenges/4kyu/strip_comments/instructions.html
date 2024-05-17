@@ -1,0 +1,45 @@
+<div class="markdown prose max-w-5xl mx-auto overflow-x-auto break-words" id="description"><p>Complete the solution so that it strips all text that follows any of a set of comment markers passed in. Any whitespace at the end of the line should also be stripped out. </p>
+<p><strong>Example:</strong></p>
+<p>Given an input string of:</p>
+<pre><code>apples, pears # and bananas
+grapes
+bananas !apples
+</code></pre>
+<p>The output expected would be:</p>
+<pre><code>apples, pears
+grapes
+bananas
+</code></pre>
+<p>The code would be called like so:</p>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-keyword">var</span> <span class="cm-def">result</span> <span class="cm-operator">=</span> <span class="cm-variable">solution</span>(<span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span>, [<span class="cm-string">"#"</span>, <span class="cm-string">"!"</span>])
+<span class="cm-comment">// result should == "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-kotlin"><span class="cm-keyword">var</span> <span class="cm-def">result</span> <span class="cm-operator">=</span> <span class="cm-variable">solution</span>(<span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span>, <span class="cm-variable">charArrayOf</span>(<span class="cm-string">'#'</span>, <span class="cm-string">'!'</span>))
+<span class="cm-comment">// result should == "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">result</span> <span class="cm-punctuation">=</span> <span class="cm-variable">stripComments</span><span class="cm-punctuation">(</span><span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span><span class="cm-punctuation">,</span> <span class="cm-punctuation">[</span><span class="cm-string">"#"</span><span class="cm-punctuation">,</span> <span class="cm-string">"!"</span><span class="cm-punctuation">]</span><span class="cm-punctuation">)</span>
+<span class="cm-comment"># result should == "apples, pears\nograpes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">solution</span>(<span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span>, [<span class="cm-string">"#"</span>, <span class="cm-string">"!"</span>])
+<span class="cm-comment"># result should == "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-crystal"><span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">solution</span>(<span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span>, [<span class="cm-string">"#"</span>, <span class="cm-string">"!"</span>])
+<span class="cm-comment"># result should == "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre><code class="language-python"><span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">strip_comments</span>(<span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span>, [<span class="cm-string">"#"</span>, <span class="cm-string">"!"</span>])
+<span class="cm-comment"># result should == "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-type">string</span> <span class="cm-variable">stripped</span> <span class="cm-operator">=</span> <span class="cm-variable">StripCommentsSolution</span>.<span class="cm-variable">StripComments</span>(<span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span>, <span class="cm-keyword">new</span> [] { <span class="cm-string">"#"</span>, <span class="cm-string">"!"</span> })
+<span class="cm-comment">// result should == "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-julia"><span class="cm-variable">result</span> <span class="cm-operator">=</span> <span class="cm-variable">stripcomments</span>(<span class="cm-string">"apples, pears # and bananas</span><span class="cm-string">\ngrapes</span><span class="cm-string">\nbananas !apples</span><span class="cm-string">"</span>, [<span class="cm-string">"#</span><span class="cm-string">"</span>, <span class="cm-string">"!</span><span class="cm-string">"</span>])
+<span class="cm-comment"># result should == "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-factor"><span class="cm-string">"</span><span class="cm-string">apples, pears # and bananas\ngrapes\nbananas !apples"</span>
+<span class="cm-string">"</span><span class="cm-string">#!"</span>
+<span class="cm-variable">strip-comments</span> <span class="cm-comment">! "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-scala"><span class="cm-keyword">val</span> <span class="cm-def">res</span> <span class="cm-operator">=</span> <span class="cm-variable">stripComments</span>(<span class="cm-string">"apples, pears # and bananas\ngrapes\nbananas !apples"</span>, <span class="cm-type">Set</span>(<span class="cm-atom">'</span><span class="cm-operator">#</span><span class="cm-atom">'</span>, <span class="cm-atom">'</span><span class="cm-operator">!</span><span class="cm-atom">'</span>))
+<span class="cm-comment">// res should be "apples, pears\ngrapes\nbananas"</span>
+</code></pre>
+</div>

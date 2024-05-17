@@ -147,6 +147,10 @@ body > .solution-content {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+.info .description h5, .info .description h4, .info .description h3 {
+  margin-bottom: 0;
+}
+
 .info .description p {
   margin: 0.5rem 0;
 }

@@ -1,0 +1,36 @@
+<div>
+<section>
+<h2>Task conditions</h2>
+<ul>
+<li>GHC 9.2.5</li>
+</ul>
+</section>
+
+<section>
+<h2>Goal</h2>
+<p>Create function that for given natural integer <code>n</code> returns list of divisors of <code>n</code> or string "<code>n</code> is prime"</p>
+</section>
+
+<section>
+<h2>Starter code:</h2>
+<pre>
+<code>module Divisors where
+
+divisors :: (Show a, Integral a) => a -> Either String [a]
+divisors a = error "todo: implement divisors"</code></pre>
+</section>
+
+<section>
+<h2>Solution</h2>
+<p>
+Factors of <code>n</code> are numbers <code>x</code> from <code>2</code> to <code>n - 1</code> 
+that leaves no remainder when divinding <code>n</code> i.e. <code>mod n x == 0</code>
+</p>
+
+<h3>Steps:</h3>
+<p>
+1. Calculate factors of <code>n</code><br>
+2. If there are no factors of <code>n</code> return string "<code>n</code> is prime", otherwise return factors<br>
+</p>
+</section>
+</div>

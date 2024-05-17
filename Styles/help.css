@@ -8,7 +8,43 @@
   height: calc(100vh - 4rem);
   padding: 1.5rem;
   overflow-y: scroll;
+  line-height: 1.5;
   background-color: #222327; /*#16171b*/
+}
+
+.help-content h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+.help-content h1 {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.help-content h2 {
+  width: 100%;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.help-content .warning {
+  width: fit-content;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 187, 0, 0.75);
+  border-radius: 0.25rem;
+  background-color: #131414;
+}
+
+.help-content .warning .title {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 187, 0, 0.75);
+  color: #ffbb00;
+  font-weight: bold;
 }
 
 /* ------------- tab select ------------- */
@@ -50,20 +86,13 @@
   gap: 0 1.5rem;
   width: 100%;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  
 }
 
 .help-content .ranks .row .level {
   flex-grow: 1;
   width: calc(50% - 0.75rem);
   min-width: 25rem;
-}
-
-.help-content .ranks .row h2 {
-  width: 100%;
-  margin: 0;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .help-content .ranks .row p {

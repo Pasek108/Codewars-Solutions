@@ -40,8 +40,18 @@ const challenges_4kyu_data = [
     name: "Big Arithmetic - integer add/subtract",
   },
   {
-    languages: [0],
-    link: "https://www.codewars.com/kata/52742f58faf5485cae000b9a/train/javascript",
+    languages: [0, 4],
+    link: "https://www.codewars.com/kata/52742f58faf5485cae000b9a",
     name: "Human readable duration format",
+  },
+  {
+    languages: [0, 2, 4],
+    link: "https://www.codewars.com/kata/51ba717bb08c1cd60f00002f",
+    name: "Range Extraction",
+  },
+  {
+    languages: [0, 2],
+    link: "https://www.codewars.com/kata/51c8e37cee245da6b40000bd",
+    name: "Strip Comments",
   },
 ]

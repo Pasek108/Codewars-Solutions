@@ -49,4 +49,9 @@ const challenges_8kyu_data = [
     link: "https://www.codewars.com/kata/53dc23c68a0c93699800041d",
     name: "Sentence Smash",
   },
+  {
+    languages: [13],
+    link: "https://www.codewars.com/kata/57356c55867b9b7a60000bd7",
+    name: "Basic Mathematical Operations",
+  },
 ]

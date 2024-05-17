@@ -39,4 +39,9 @@ const challenges_7kyu_data = [
     link: "https://www.codewars.com/kata/64fc03a318692c1333ebc04c",
     name: "A Letter's Best Friend",
   },
+  {
+    languages: [13],
+    link: "https://www.codewars.com/kata/544aed4c4a30184e960010f4",
+    name: "Find the divisors!",
+  },
 ]
