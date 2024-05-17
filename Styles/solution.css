@@ -234,7 +234,7 @@ body > .solution-content {
   font-size: 1rem;
   font-weight: normal;
   background-color: #16171b;
-  background-image: url("/Images/dropdown.svg");
+  background-image: url("../Images/dropdown.svg");
   background-repeat: no-repeat, repeat;
   background-position: right 0.7em top 55%, 0 0;
   background-size: 0.65em auto, 100%;

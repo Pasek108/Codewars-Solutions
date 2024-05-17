@@ -56,6 +56,8 @@ class ChallengesList {
   }
 
   switchChallengesList() {
+    help.switchHelp(false)
+
     let show = this.challenges_select
     let hide = this.solution_content
 
