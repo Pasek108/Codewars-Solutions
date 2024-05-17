@@ -87,7 +87,7 @@ class SolutionLanguageSelect {
 
     const logo = document.createElement("img")
     logo.className = `${language.folder_name}-logo`
-    logo.src = `/Images/${language.folder_name}_logo.svg`
+    logo.src = `Images/${language.folder_name}_logo.svg`
     logo.alt = `${language.folder_name} logo`
 
     const name = document.createElement("span")
