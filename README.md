@@ -17,7 +17,7 @@
 > Challenges like these are an opportunity to improve by coming up with your own solutions. Take your time and think about your approach.  
 > If you can't complete a challenge, skip it and come back to it later. Only look at someone else's solutions as a last resort, and treat it as a learning opportunity rather than a defeat.
 
-
+<!--
 <br>
 
 # Table of Contents
@@ -62,7 +62,7 @@ The project is a showcase of my solutions for [Codewars](https://www.codewars.co
 Check out the [live version](https://pasek108.github.io/Codewars-Solutions/) of this project, as well as my [Codewars profile](https://www.codewars.com/users/Artur%20Pas).
 
 ![preview](/_for_readme/preview.png)
-<!--
+
 ## Technologies
 Languages:
 - HTML
